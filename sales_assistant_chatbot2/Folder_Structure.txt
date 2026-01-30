@@ -1,0 +1,15 @@
+sales_assistant_chatbot/
+│
+├── app.py
+├── .env
+├── requirements.txt
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── style.css
+│   └── script.js
+
+
+Note: Python 3.13.3

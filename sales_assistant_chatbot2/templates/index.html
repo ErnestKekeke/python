@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Fashion Sales Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h2>🤖 AI Fashion Sales Assistant ✨</h2>
+
+
+
+    <div id="chatbox"></div>
+
+    <!-- Form for input -->
+    <form id="chatForm">
+        <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off" />
+        <button type="submit" id="sendBtn">Send</button>
+    </form>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

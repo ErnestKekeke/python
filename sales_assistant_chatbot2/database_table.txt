@@ -1,0 +1,132 @@
+
+1 .........................
+CREATE DATABASE IF NOT EXISTS fashion_store;
+USE fashion_store;
+.........................
+
+
+2 ......................... CATEGORIES TABLE
+CREATE TABLE IF NOT EXISTS categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO categories (name) VALUES 
+('Men'),
+('Women'),
+('Footwear'),
+('Accessories'),
+('Fabrics'),
+('Traditional Wear');
+.........................
+
+
+
+3 ......................... PRODUCT TABLE
+CREATE TABLE IF NOT EXISTS products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    stock INT NOT NULL,
+    category_id INT,
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+.........................
+
+
+4 ......................... PRCICE RANGE TABLE
+CREATE TABLE IF NOT EXISTS price_ranges (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    range_name VARCHAR(50) NOT NULL,
+    min_price DECIMAL(10,2) NOT NULL,
+    max_price DECIMAL(10,2)
+);
+
+INSERT INTO price_ranges (range_name, min_price, max_price) VALUES
+('Budget', 0, 10000),
+('Affordable', 10001, 20000),
+('Mid-Range', 20001, 40000),
+('Premium', 40001, 60000),
+('Luxury', 60001, NULL);
+.........................
+
+
+5 ......................... CHAT LOGS
+CREATE TABLE IF NOT EXISTS chat_logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_message TEXT,
+    bot_reply TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+.........................
+
+
+5 ......................... INSERT MEN, WOMEN, FOOTWEAR, ACCESSORIES, FABRICS, TRADITIONAL WEAR
+-- MEN
+INSERT INTO products (name, price, stock, category_id) VALUES
+('Agbada', 55000, 5, 1),
+('Senator Wear', 25000, 10, 1),
+('Men Casual Shirt', 15000, 20, 1),
+('Kaftan', 22000, 8, 1),
+('Men Blazer', 45000, 3, 1),
+('Slim Fit Trousers', 12000, 15, 1),
+('Men Hoodie', 10000, 12, 1);
+
+-- WOMEN
+INSERT INTO products (name, price, stock, category_id) VALUES
+('Ankara Gown', 15000, 10, 2),
+('Peplum Top', 12000, 15, 2),
+('Aso Ebi Dress', 25000, 5, 2),
+('Buba & Iro', 20000, 7, 2),
+('Wrapper Skirt', 10000, 12, 2),
+('Evening Gown', 30000, 4, 2),
+('Kitenge Dress', 18000, 8, 2);
+
+-- FOOTWEAR
+INSERT INTO products (name, price, stock, category_id) VALUES
+('Leather Slippers', 12000, 15, 3),
+('High Heel Shoes', 18000, 8, 3),
+('Sneakers', 15000, 10, 3),
+('Sandals', 8000, 20, 3),
+('Boots', 25000, 5, 3);
+
+-- ACCESSORIES
+INSERT INTO products (name, price, stock, category_id) VALUES
+('Beaded Necklace', 6000, 20, 4),
+('Bracelet Set', 5000, 15, 4),
+('Earrings', 3000, 25, 4),
+('Leather Belt', 4000, 10, 4),
+('Fashion Hat', 7000, 8, 4);
+
+-- FABRICS
+INSERT INTO products (name, price, stock, category_id) VALUES
+('Adire Fabric', 20000, 8, 5),
+('Ankara Fabric', 15000, 10, 5),
+('Lace Fabric', 18000, 5, 5),
+('George Fabric', 25000, 6, 5),
+('Silk Fabric', 35000, 3, 5);
+
+-- TRADITIONAL WEAR
+INSERT INTO products (name, price, stock, category_id) VALUES
+('Native Cap', 5000, 15, 6),
+('Iborun (Wrapper)', 7000, 12, 6),
+('Aso Oke', 30000, 4, 6),
+('Fila Hat', 4000, 10, 6),
+('Agbada Cap', 6000, 5, 6);
+.........................
+
+5 .........................
+.........................
+
+Examples of User Input: 
+
+hello 
+men
+women
+footwear
+budget
+affordable
+clothes
+who are you
+joke
+bye
