@@ -10,6 +10,3 @@ sales_assistant_chatbot/
 ├── static/
 │   ├── style.css
 │   └── script.js
-
-
-Note: Python 3.13.3
