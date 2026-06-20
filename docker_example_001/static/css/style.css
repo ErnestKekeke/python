@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navigation */
+nav {
+    background-color: #0078ff;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 30px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
+p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0078ff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005fcc;
+}
+
+/* Images */
+img {
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* About page specific */
+.about-card {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.about-card h2 {
+    color: #0078ff;
+}
+
+.about-card ul {
+    color: #555;
+    line-height: 1.8;
+}

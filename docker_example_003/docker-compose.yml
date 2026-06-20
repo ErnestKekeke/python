@@ -1,0 +1,57 @@
+volumes:
+  mysql_data:
+
+services:
+
+  mysql:
+    image: mysql:8.4
+    pull_policy: never
+    container_name: mysite-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: personsdb
+      MYSQL_USER: flaskuser
+      MYSQL_PASSWORD: flaskpassword
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    image: mysite-python-flask:1.0.0
+    pull_policy: never
+    container_name: mysite-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql # reference to the mysql service name
+      DB_PORT: 3306
+      DB_NAME: personsdb
+      DB_USER: flaskuser
+      DB_PASS: flaskpassword
+
+
+    # When you need this value from the dot env
+    #   environment:
+    #   DB_HOST: ${DB_HOST}
+    #   DB_USER: ${DB_USER}
+    #   DB_PASS: ${DB_PASS}
+    #   DB_NAME: ${DB_NAME}
+  
+  frontend:
+    image: mysite-nginx-simple
+    pull_policy: never
+    container_name: mysite-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 2000:80
+    depends_on:
+      - backend 

@@ -1,0 +1,22 @@
+services:
+  backend:
+    image: mysite-python-flask
+    pull_policy: never
+    container_name: mysite-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+  
+  frontend:
+    image: mysite-nginx-simple
+    pull_policy: never
+    container_name: mysite-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 2000:80
+    depends_on:
+      - backend

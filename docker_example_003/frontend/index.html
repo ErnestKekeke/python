@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Manager</title>
+
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Person Manager</h1>
+
+        <!-- Button Section -->
+        <button id="btn">Click Me</button>
+
+        <h3>She looks beautiful</h3>
+
+        <img src="./static/images/girl.jpg" alt="girl" class="girl-image">
+
+        <!-- Form -->
+        <form id="personForm">
+            <input type="text" id="name" placeholder="Enter name" required>
+
+            <input type="number" id="age" placeholder="Enter age" required>
+
+            <select id="isMale" required>
+                <option value="">Select Gender</option>
+                <option value="true">Male</option>
+                <option value="false">Female</option>
+            </select>
+
+            <button type="submit">Add Person</button>
+        </form>
+
+        <div id="message"></div>
+
+        <h2>Persons List</h2>
+
+        <div id="personsContainer"></div>
+
+    </div>
+
+    <script src="./static/js/script.js"></script>
+</body>
+</html>

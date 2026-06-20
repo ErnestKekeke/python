@@ -90,7 +90,7 @@ def chatbot_response(user_message):
 
     # ---------- SMALL TALK ----------
 # ---------- SMALL TALK ----------
-    if any(phrase in user_message for phrase in ["how are you", "how's it going", "how do you do", "how are things", "what's up"]):
+    if any(phrase in user_message for phrase in ["how are you", "how's it going", "how do you do", "how you doing", "how are things", "what's up"]):
         return random.choice([
             "I'm doing well, thank you! How about you? 😊",
             "All good here! Ready to help you find fashion items 👗",

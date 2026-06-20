@@ -1,0 +1,19 @@
+# Python virtual environment
+venv/
+.venv/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Docker
+# mysql_data/

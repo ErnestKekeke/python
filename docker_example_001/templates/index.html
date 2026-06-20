@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTEK Technologies Ltd</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a> |
+        <a href="{{ url_for('about') }}">About</a>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome</h1>
+        <p>This is a simple HTML page with external CSS.</p>
+
+        <button id="btn">Click Me</button>
+
+        <h3>She looks beautiful</h3>
+
+        <img src="{{ url_for('static', filename='images/girl.jpg') }}" alt="Girl"/>
+        <!-- <img src="../static/images/girl.jpg"> -->
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
